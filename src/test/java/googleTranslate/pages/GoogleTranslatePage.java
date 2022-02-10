@@ -16,5 +16,9 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "(//button[@aria-label='More source languages'])[1]")
     public WebDriver sourceLanguageButton;
 
+    @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae']/div/div[3]//div[@class='qSb8Pe RCaXn'])[2]//div[.='German']")
+    public WebDriver sourceLangGermanOption;
+
+
 
 }
