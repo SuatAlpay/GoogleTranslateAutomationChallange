@@ -31,6 +31,9 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "//span//div/textarea[@aria-label='Source text']")
     public WebDriver sourceTextArea;
 
+    @FindBy(xpath = "//a[@aria-label='Show the Input Tools menu']")
+    public WebDriver inputTools;
+
 
 
 
