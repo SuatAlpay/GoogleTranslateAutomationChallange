@@ -34,6 +34,9 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "//a[@aria-label='Show the Input Tools menu']")
     public WebDriver inputTools;
 
+    @FindBy(xpath = "(//ul[@class='ita-kd-dropdown-menu']/li)[3]//span[.='US International']")
+    public WebDriver inputToolsEngKeyboard;
+
 
 
 
