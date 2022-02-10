@@ -46,6 +46,10 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "//div[@id='kbd']//button[@id='K73']")
     public WebDriver lowerCaseLetter_i;
 
+    @FindBy(xpath = "(//div[@id='kbd']//button[@id='K51']")
+    public WebDriver exclamationPoint;
+
+
 
 
 
