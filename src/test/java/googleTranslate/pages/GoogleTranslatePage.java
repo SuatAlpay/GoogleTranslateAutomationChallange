@@ -37,6 +37,11 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "(//ul[@class='ita-kd-dropdown-menu']/li)[3]//span[.='US International']")
     public WebDriver inputToolsEngKeyboard;
 
+    @FindBy(xpath = "(//div[@id='kbd']//button[@id='K16'])[1]")
+    public WebDriver capsButton;
+
+
+
 
 
 
