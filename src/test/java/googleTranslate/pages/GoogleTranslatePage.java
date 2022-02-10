@@ -28,6 +28,10 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "(//button[@aria-label='Swap languages (Cmd+Shift+S)'])[1]")
     public WebDriver swapLangButton;
 
+    @FindBy(xpath = "//span//div/textarea[@aria-label='Source text']")
+    public WebDriver sourceTextArea;
+
+
 
 
 }
