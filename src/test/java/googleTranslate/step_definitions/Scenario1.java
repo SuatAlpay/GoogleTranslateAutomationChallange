@@ -19,7 +19,9 @@ public class Scenario1 {
     @When("User select source language from the drop-down menu on the left as {string}")
     public void user_select_source_language_from_the_drop_down_menu_on_the_left_as(String string) {
 
-        gTp.sourceLanguageButton.
+        gTp.sourceLanguageButton.click();
+
+
     }
     @When("Users select translation language from the drop-down menu on the right as {string}")
     public void users_select_translation_language_from_the_drop_down_menu_on_the_right_as(String string) {
