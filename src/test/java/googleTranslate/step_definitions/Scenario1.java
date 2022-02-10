@@ -1,11 +1,15 @@
 package googleTranslate.step_definitions;
 
+import googleTranslate.utilities.ConfigurationReader;
+import googleTranslate.utilities.Driver;
 import io.cucumber.java.en.*;
 
 public class Scenario1 {
 
     @Given("User is on Google Translate website")
     public void user_is_on_google_translate_website() {
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
     }
     @When("User select source language from the drop-down menu on the left as {string}")
