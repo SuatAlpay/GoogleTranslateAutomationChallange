@@ -25,6 +25,9 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "(//div[@class='ykTHSe']//div[@class='F29iQc']//div[@class='qSb8Pe RCaXn'])[2]//div[.='Spanish']")
     public WebDriver targetLangSpanishOption;
 
+    @FindBy(xpath = "(//button[@aria-label='Swap languages (Cmd+Shift+S)'])[1]")
+    public WebDriver swapLangButton;
+
 
 
 }
