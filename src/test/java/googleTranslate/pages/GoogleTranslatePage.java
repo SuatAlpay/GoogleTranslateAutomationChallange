@@ -49,11 +49,7 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "(//div[@id='kbd']//button[@id='K51']")
     public WebDriver exclamationPoint;
 
-
-
-
-
-
-
+    @FindBy(xpath = "//div[@id='kbd']//div[@class='vk-t-btns']/div")
+    public WebDriver closeKeyboardButton;
 
 }
