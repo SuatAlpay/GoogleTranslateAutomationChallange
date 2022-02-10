@@ -40,6 +40,9 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "(//div[@id='kbd']//button[@id='K16'])[1]")
     public WebDriver capsButton;
 
+    @FindBy(xpath = "//div[@id='kbd']//button[@id='K72']")
+    public WebDriver upperCaseLetter_H;
+
 
 
 
