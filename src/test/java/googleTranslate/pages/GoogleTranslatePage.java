@@ -2,6 +2,7 @@ package googleTranslate.pages;
 
 import googleTranslate.utilities.Driver;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,42 +15,42 @@ public class GoogleTranslatePage {
 
 
     @FindBy(xpath = "(//button[@aria-label='More source languages'])[1]")
-    public WebDriver sourceLanguageButton;
+    public WebElement sourceLanguageButton;
 
     @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae']/div/div[3]//div[@class='qSb8Pe RCaXn'])[2]//div[.='German']")
-    public WebDriver sourceLangGermanOption;
+    public WebElement sourceLangGermanOption;
 
     @FindBy(xpath = "(//button[@aria-label='More target languages'])[1]")
-    public WebDriver targetLanguagesButton;
+    public WebElement targetLanguagesButton;
 
     @FindBy(xpath = "(//div[@class='ykTHSe']//div[@class='F29iQc']//div[@class='qSb8Pe RCaXn'])[2]//div[.='Spanish']")
-    public WebDriver targetLangSpanishOption;
+    public WebElement targetLangSpanishOption;
 
     @FindBy(xpath = "(//button[@aria-label='Swap languages (Cmd+Shift+S)'])[1]")
-    public WebDriver swapLangButton;
+    public WebElement swapLangButton;
 
     @FindBy(xpath = "//span//div/textarea[@aria-label='Source text']")
-    public WebDriver sourceTextArea;
+    public WebElement sourceTextArea;
 
     @FindBy(xpath = "//a[@aria-label='Show the Input Tools menu']")
-    public WebDriver inputTools;
+    public WebElement inputTools;
 
     @FindBy(xpath = "(//ul[@class='ita-kd-dropdown-menu']/li)[3]//span[.='US International']")
-    public WebDriver inputToolsEngKeyboard;
+    public WebElement inputToolsEngKeyboard;
 
     @FindBy(xpath = "(//div[@id='kbd']//button[@id='K16'])[1]")
-    public WebDriver capsButton;
+    public WebElement capsButton;
 
     @FindBy(xpath = "//div[@id='kbd']//button[@id='K72']")
-    public WebDriver upperCaseLetter_H;
+    public WebElement upperCaseLetter_H;
 
     @FindBy(xpath = "//div[@id='kbd']//button[@id='K73']")
-    public WebDriver lowerCaseLetter_i;
+    public WebElement lowerCaseLetter_i;
 
     @FindBy(xpath = "(//div[@id='kbd']//button[@id='K51']")
-    public WebDriver exclamationPoint;
+    public WebElement exclamationPoint;
 
     @FindBy(xpath = "//div[@id='kbd']//div[@class='vk-t-btns']/div")
-    public WebDriver closeKeyboardButton;
+    public WebElement closeKeyboardButton;
 
 }
