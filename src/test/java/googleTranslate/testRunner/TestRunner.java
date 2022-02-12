@@ -14,7 +14,7 @@ import static io.cucumber.junit.platform.engine.Constants.EXECUTION_DRY_RUN_PROP
 @SelectClasspathResource("src/test/resources/features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "googleTranslate.step_definitions")
 @ConfigurationParameter(key = PLUGIN_PUBLISH_ENABLED_PROPERTY_NAME,value = "true")
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,value = "pretty, json:target/cucumber.json , html:target/cucumber.html")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber.html")
 @ConfigurationParameter(key = EXECUTION_DRY_RUN_PROPERTY_NAME, value = "false")
 public class TestRunner {
 
