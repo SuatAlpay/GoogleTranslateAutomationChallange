@@ -16,8 +16,8 @@ public class Scenario3 {
     public void user_selects_screen_keyboard() {
 
     }
-    @Then("User should enter {string}")
-    public void user_should_enter(String string) {
+    @Then("User should enter Hi")
+    public void user_should_enter() {
 
     }
 
