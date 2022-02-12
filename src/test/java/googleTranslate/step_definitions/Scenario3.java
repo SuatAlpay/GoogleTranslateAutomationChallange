@@ -39,8 +39,6 @@ public class Scenario3 {
         gTp.capsButton.click();
         gTp.exclamationPoint.click();
         gTp.closeKeyboardButton.click();
-
-        BrowserUtility.waitFor(4);
     }
 
 }
