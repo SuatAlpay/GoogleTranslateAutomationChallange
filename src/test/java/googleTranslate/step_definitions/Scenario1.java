@@ -68,7 +68,7 @@ public class Scenario1 {
     @When("User enters the initial text in the input field on the left")
     public void user_enters_the_initial_text_in_the_input_field_on_the_left() {
 
-        gTp.sourceTextArea.sendKeys();
+        gTp.sourceTextArea.sendKeys("democratie");
 
     }
     @Then("The initial text should match the translated text")

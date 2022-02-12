@@ -7,7 +7,7 @@ Feature:
     When User select source language from the drop-down menu on the left as German
     And Users select translation language from the drop-down menu on the right as Spanish
 
-  Scenario:
+  Scenario: User enters source text as German and verifies the Spanish translation
     And User enters the initial text in the input field on the left
     Then The initial text should match the translated text
 
