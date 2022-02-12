@@ -12,13 +12,13 @@ public class Scenario3 {
     @When("User clears the input field")
     public void user_clears_the_input_field() {
 
-        gTp.sourceTextArea.sendKeys(Keys.CLEAR);
+        gTp.sourceTextArea.clear();
 
-        BrowserUtility.waitFor(1);
     }
     @When("User clicks select input tool button")
     public void user_clicks_select_input_tool_button() {
 
+        BrowserUtility.waitForVisibility(gTp.inputTools,5);
         gTp.inputTools.click();
 
     }
@@ -39,6 +39,8 @@ public class Scenario3 {
         gTp.capsButton.click();
         gTp.exclamationPoint.click();
         gTp.closeKeyboardButton.click();
+
+        BrowserUtility.waitFor(4);
     }
 
 }
