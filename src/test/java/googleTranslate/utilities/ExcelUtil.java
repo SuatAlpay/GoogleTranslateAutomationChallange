@@ -1,11 +1,13 @@
 package googleTranslate.utilities;
 
 
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ExcelUtil {
 
@@ -24,4 +26,16 @@ public class ExcelUtil {
             throw new RuntimeException(e);
         }
     }
+    
+    public String getCellData(int rowNum, int colNum) {
+        Cell cell;
+        try {
+            cell = workSheet.getRow(rowNum).getCell(colNum);
+            String cellData = cell.toString();
+            return cellData;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
