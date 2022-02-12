@@ -3,7 +3,6 @@ package googleTranslate.pages;
 import googleTranslate.utilities.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -23,7 +22,7 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "(//button[@aria-label='More target languages'])[1]")
     public WebElement targetLanguagesButton;
 
-    @FindBy(xpath = "(//div[@class='ykTHSe']//div[@class='F29iQc']//div[@class='qSb8Pe RCaXn'])[2]//div[.='Spanish']")
+    @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae'])[2]//div[@data-language-code='es']//div[.='Spanish']")
     public WebElement targetLangSpanishOption;
 
     @FindBy(xpath = "(//button[@aria-label='Swap languages (Cmd+Shift+S)'])[1]")
@@ -47,7 +46,7 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "//div[@id='kbd']//button[@id='K73']")
     public WebElement lowerCaseLetter_i;
 
-    @FindBy(xpath = "(//div[@id='kbd']//button[@id='K51']")
+    @FindBy(xpath = "//div[@id='kbd']//button[@id='K49']")
     public WebElement exclamationPoint;
 
     @FindBy(xpath = "//div[@id='kbd']//div[@class='vk-t-btns']/div")
