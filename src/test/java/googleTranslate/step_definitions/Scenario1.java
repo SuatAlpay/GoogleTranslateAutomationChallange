@@ -4,34 +4,16 @@ import googleTranslate.pages.GoogleTranslatePage;
 import googleTranslate.utilities.BrowserUtility;
 import googleTranslate.utilities.ConfigurationReader;
 import googleTranslate.utilities.Driver;
-import googleTranslate.utilities.ExcelUtil;
 import io.cucumber.java.en.*;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tags;
 
-import java.io.FileInputStream;
+
+
+
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class Scenario1 {
 
     GoogleTranslatePage gTp = new GoogleTranslatePage();
-
-    private FileInputStream fileInputStream;
-
-    private Workbook workbook;
-
-    private Sheet workSheet;
-
-    String filePathLangDE = "src/test/resources/langDE.xlsx";
-    String filePathLangES = "src/test/resources/langES.xlsx";
-
 
     @Given("User is on Google Translate website")
     public void user_is_on_google_translate_website() {
@@ -72,25 +54,7 @@ public class Scenario1 {
 
     }
     @Then("The initial text should match the translated text")
-    public void the_initial_text_should_match_the_translated_text() {
-
-        ExcelUtil excelUtilDE = new ExcelUtil(filePathLangDE,"langDE");
-        excelUtilDE.getCellData(0,1);
-
-        ExcelUtil excelUtilES = new ExcelUtil(filePathLangES,"langES");
-        excelUtilES.getCellData(0,1);
-
-        Map<String,String> map = new HashMap<>();
-
-        for (int i = 0; i < workSheet.getLastRowNum() ; i++) {
-
-            Row row = workSheet.getRow(i);
-
-            for (Cell eachCell : row){
-                map.put(eachCell.getStringCellValue(),eachCell.getStringCellValue());
-            }
-        }
-        System.out.println(map);
+    public void the_initial_text_should_match_the_translated_text() throws IOException{
 
 
     }
