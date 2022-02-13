@@ -5,11 +5,16 @@ import googleTranslate.utilities.BrowserUtility;
 import googleTranslate.utilities.ConfigurationReader;
 import googleTranslate.utilities.Driver;
 import io.cucumber.java.en.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 
-
-
+import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Scenario1 {
 
@@ -66,7 +71,31 @@ public class Scenario1 {
 
     }
     @Then("The initial text should match the translated text")
-    public void the_initial_text_should_match_the_translated_text() throws IOException{
+    public void the_initial_text_should_match_the_translated_text() throws IOException, ParseException {
+
+        JSONParser jsonParser = new JSONParser();
+
+        FileReader reader = new FileReader("src/test/java/com/cybertek/JsonFiles/langDE.json");
+
+        Object obj = jsonParser.parse(reader);
+
+        JSONObject jsonObject = (JSONObject) obj;
+
+        //String sourceLAng = (String) jsonObject.get("langDE[0].SourceLanguage");
+
+        JSONArray jsonArray = (JSONArray) jsonObject.get("langDE");
+
+        Map<String,String> map = new LinkedHashMap<>();
+
+        for (int i = 0; i < jsonArray.size(); i++) {
+
+            JSONObject lanDE = (JSONObject) jsonArray.get(i);
+
+            String sourceLang = (String) lanDE.get("SourceLanguage");
+            String initialText = (String) lanDE.get("InitialText");
+
+            map.put(sourceLang,initialText);
+        }
 
 
     }

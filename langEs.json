@@ -1,0 +1,17 @@
+{
+  "langES": [
+    {
+      "SourceLanguage": "Spanish",
+      "ExpectedResult" : "democracia"
+    },
+
+    {
+      "SourceLanguage": "Spanish",
+      "ExpectedResult" : "gracias"
+    },
+    {
+      "SourceLanguage": "Spanish",
+      "ExpectedResult" : "verano"
+    }
+  ]
+}

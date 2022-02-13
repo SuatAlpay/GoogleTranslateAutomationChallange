@@ -1,0 +1,18 @@
+{
+  "firstName" : "hello",
+  "langDE": [
+    {
+      "SourceLanguage": "German_1",
+      "InitialText" : "demokratie"
+    },
+
+    {
+      "SourceLanguage": "German_2",
+      "InitialText" : "danke"
+    },
+    {
+      "SourceLanguage": "German_3",
+      "InitialText" : "sommer"
+    }
+  ]
+}
