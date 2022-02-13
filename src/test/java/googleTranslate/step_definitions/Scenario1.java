@@ -11,6 +11,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 
@@ -29,7 +30,7 @@ public class Scenario1 {
     Object obj;
     JSONObject jsonObject;
     String sourceLang = "";
-    String translationLanguage = "";
+    String translationLang = "";
     String initialText="";
     String expectedResult="";
 
@@ -39,7 +40,7 @@ public class Scenario1 {
             obj = parser.parse(reader);
             jsonObject = (JSONObject) obj;
             sourceLang = (String) jsonObject.get("SourceLanguage");
-            translationLanguage = (String) jsonObject.get("TranslationLanguage");
+            translationLang = (String) jsonObject.get("TranslationLanguage");
             initialText= (String) jsonObject.get("InitialText");
             expectedResult= (String) jsonObject.get("ExpectedResult");
         } catch (ParseException | IOException e) {
@@ -58,9 +59,7 @@ public class Scenario1 {
     @When("User select source language from the drop-down menu on the left as {string}")
     public void user_select_source_language_from_the_drop_down_menu_on_the_left_as(String sourceLang) {
 
-        WebElement sLang = Driver.getDriver().findElement(By.xpath("(//div[@class='qSb8Pe']//div[contains(text(),'"+ sourceLang +"')])[1]"));
-
-        BrowserUtility.waitForClickable(gTp.sourceLanguageButton,5);
+        BrowserUtility.waitForClickable(gTp.moreSourceLanguageButton,5);
 
         /**
          *  Could also be implemented as below during DataBaseTesting.
@@ -75,38 +74,50 @@ public class Scenario1 {
                     * Driver.findElement(By.xpath("(//div[@class='qSb8Pe']//div[contains(text(),'"+ sourceLang +"')])[1]"))
          */
 
-        gTp.sourceLanguageButton.click();
+        gTp.moreSourceLanguageButton.click();
 
         BrowserUtility.waitFor(1);
+
+        WebElement sLang = Driver.getDriver().findElement(By.xpath("(//div[@class='qSb8Pe']//div[contains(text(),'"+ sourceLang +"')])[1]"));
 
         sLang.click();
 
 
     }
     @When("Users select translation language from the drop-down menu on the right as {string}")
-    public void users_select_translation_language_from_the_drop_down_menu_on_the_right_as(String translationLanguage) {
+    public void users_select_translation_language_from_the_drop_down_menu_on_the_right_as(String translationLang) {
 
-        WebElement tLang = Driver.getDriver().findElement(By.xpath("(//div[@class='qSb8Pe']//div[contains(text(),'"+ translationLanguage +"')])[1]"));
+        WebElement tLang = Driver.getDriver().findElement(By.xpath("(//div[@class='dykxn MeCBDd j33Gae'])[2]//div[.='"+translationLang+"']"));
 
-        BrowserUtility.waitForClickable(gTp.targetLanguagesButton,5);
+        BrowserUtility.waitForVisibility(gTp.moreTargetLanguagesButton,5);
 
-        gTp.targetLanguagesButton.click();
+        gTp.moreTargetLanguagesButton.click();
 
         BrowserUtility.waitFor(1);
+
+        /*
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        js.executeScript("arguments[0].scrollIntoView(true);",tLang);
+         */
 
         tLang.click();
 
     }
-    @When("User enters the initial text in the input field on the left")
-    public void user_enters_the_initial_text_in_the_input_field_on_the_left() {
+    @When("User enters the {string} in the input field on the left")
+    public void user_enters_the_initial_text_in_the_input_field_on_the_left(String text) {
 
-        gTp.sourceTextArea.sendKeys(initialText);
+        text = initialText;
+
+        gTp.sourceTextArea.sendKeys(text);
 
     }
-    @Then("The initial text should match the translated text")
-    public void the_initial_text_should_match_the_translated_text() {
+    @Then("The initial text should be translated to the {string}")
+    public void the_initial_text_should_match_the_translated_text(String result) {
 
+        result = expectedResult;
         Assertions.assertEquals(expectedResult,"verano");
 
     }
+
 }

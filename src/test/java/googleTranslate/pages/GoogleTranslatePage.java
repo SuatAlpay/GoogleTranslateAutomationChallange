@@ -16,14 +16,8 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "(//button[@aria-label='More source languages'])[1]")
     public WebElement moreSourceLanguageButton;
 
-    // @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae']//div[@data-language-code='de']//div[.='German'])[1]")
-    // public WebElement sourceLangGermanOption;
-
     @FindBy(xpath = "(//button[@aria-label='More target languages'])[1]")
     public WebElement moreTargetLanguagesButton;
-
-    // @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae'])[2]//div[@data-language-code='es']//div[.='Spanish']")
-    //public WebElement targetLangSpanishOption;
 
     @FindBy(xpath = "(//button[@aria-label='Swap languages (Cmd+Shift+S)'])[1]")
     public WebElement swapLangButton;

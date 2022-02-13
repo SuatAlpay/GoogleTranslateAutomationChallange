@@ -40,7 +40,9 @@ public class Scenario2 {
 
         gTp.swapLangButton.click();
     }
-    @Then("The source language text should match translated text")
-    public void the_source_language_text_should_match_translated_text() {
+
+    @Then("Verify that the  translated text is {string}")
+    public void verifyThatTheTranslatedTextIs(String initialText) {
+        this.initialText = initialText;
     }
 }
