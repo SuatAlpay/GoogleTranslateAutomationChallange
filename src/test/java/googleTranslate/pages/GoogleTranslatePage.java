@@ -25,6 +25,16 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "//span//div/textarea[@aria-label='Source text']")
     public WebElement sourceTextArea;
 
+    @FindBy(xpath = "//div[@class='A3dMNc']/span")
+    public WebElement actualTextFromSourceArea;
+
+    @FindBy(xpath = "(//div[@class='J0lOec']/span)[1]")
+    public WebElement actualTextFromTranslationsArea;
+
+    @FindBy(xpath = "//div[@class='J0lOec']//span[@jsname='W297wb']")
+    public WebElement actualTextFromTranslationsAreaAfterSwap;
+
+
     @FindBy(xpath = "//a[@aria-label='Show the Input Tools menu']")
     public WebElement inputTools;
 

@@ -42,7 +42,7 @@ public class Scenario2 {
     }
 
     @Then("Verify that the  translated text is {string}")
-    public void verifyThatTheTranslatedTextIs(String initialText) {
-        this.initialText = initialText;
+    public void verifyThatTheTranslatedTextIs(String text) {
+        text= initialText;
     }
 }
