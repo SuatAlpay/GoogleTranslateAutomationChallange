@@ -8,11 +8,12 @@ import io.cucumber.java.en.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -74,28 +75,34 @@ public class Scenario1 {
     public void the_initial_text_should_match_the_translated_text() throws IOException, ParseException {
 
         JSONParser jsonParser = new JSONParser();
+        FileReader readerDE = new FileReader("lang.json");
+      //  FileReader readerES = new FileReader("langES.json");
 
-        FileReader reader = new FileReader("src/test/java/com/cybertek/JsonFiles/langDE.json");
+        Object objDE = jsonParser.parse(readerDE);
+        //Object objES = jsonParser.parse(readerES);
 
-        Object obj = jsonParser.parse(reader);
+        JSONObject jsonObjectDE = (JSONObject) objDE;
+        //JSONObject jsonObjectES = (JSONObject) objES;
 
-        JSONObject jsonObject = (JSONObject) obj;
+        JSONArray jsonArrayDE = (JSONArray) jsonObjectDE.get("lang");
+        //JSONArray jsonArrayES = (JSONArray) jsonObjectES.get("langES");
 
-        //String sourceLAng = (String) jsonObject.get("langDE[0].SourceLanguage");
+        Map<String,String> mapLangDE = new LinkedHashMap<>();
+        Map<String,String> mapLangES = new LinkedHashMap<>();
 
-        JSONArray jsonArray = (JSONArray) jsonObject.get("langDE");
+        System.out.println(jsonArrayDE.size());
+        for (int i = 0; i < jsonArrayDE.size(); i++) {
 
-        Map<String,String> map = new LinkedHashMap<>();
-
-        for (int i = 0; i < jsonArray.size(); i++) {
-
-            JSONObject lanDE = (JSONObject) jsonArray.get(i);
+            JSONObject lanDE = (JSONObject) jsonArrayDE.get(i);
 
             String sourceLang = (String) lanDE.get("SourceLanguage");
             String initialText = (String) lanDE.get("InitialText");
 
-            map.put(sourceLang,initialText);
+                mapLangDE.put(sourceLang,initialText);
+
         }
+
+        System.out.println(mapLangDE);
 
 
     }

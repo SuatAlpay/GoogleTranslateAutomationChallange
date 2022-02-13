@@ -8,13 +8,16 @@ Feature:
     And Users select translation language from the drop-down menu on the right as Spanish
     And User enters the initial text in the input field on the left
 
+  @sc1
   Scenario:
     Then The initial text should match the translated text
 
+  @sc2
   Scenario:
     And User clicks swap languages button
     Then The source language text should match translated text
 
+  @sc3
   Scenario:
 
     And User clears the input field

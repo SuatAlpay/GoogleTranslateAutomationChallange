@@ -1,0 +1,8 @@
+{
+
+  "SourceLanguage": "German",
+  "InitialText" : "sommer",
+  "TranslationLanguage": "Spanish",
+  "ExpectedResult" : "verano"
+
+}
