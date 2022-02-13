@@ -9,17 +9,16 @@ Feature:
     And User enters the initial text in the input field on the left
 
   @sc1
-  Scenario:
+  Scenario: User should be able to translate from Source Language to Translation Language
     Then The initial text should match the translated text
 
   @sc2
-  Scenario:
+  Scenario: User swaps Source Language to Translation Language then verifies the results
     And User clicks swap languages button
     Then The source language text should match translated text
 
   @sc3
-  Scenario:
-
+  Scenario: User uses the Screen Keyboard functionality to print out Hi!
     And User clears the input field
     And User clicks select input tool button
     And User selects screen keyboard

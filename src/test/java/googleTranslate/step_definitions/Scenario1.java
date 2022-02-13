@@ -9,6 +9,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.junit.jupiter.api.Assertions;
 
 
 import java.io.FileNotFoundException;
@@ -20,6 +21,31 @@ import java.util.Map;
 public class Scenario1 {
 
     GoogleTranslatePage gTp = new GoogleTranslatePage();
+
+    JSONParser parser = new JSONParser();
+    FileReader reader;
+    Object obj;
+    JSONObject jsonObject;
+    String sourceLang = "";
+    String translationLanguage = "";
+    String initialText="";
+    String expectedResult="";
+
+    {
+        try {
+            reader = new FileReader("src/test/resources/lang.json");
+            obj = parser.parse(reader);
+            jsonObject = (JSONObject) obj;
+            sourceLang = (String) jsonObject.get("SourceLanguage");
+            translationLanguage = (String) jsonObject.get("TranslationLanguage");
+            initialText= (String) jsonObject.get("InitialText");
+            expectedResult= (String) jsonObject.get("ExpectedResult");
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     @Given("User is on Google Translate website")
     public void user_is_on_google_translate_website() {
@@ -68,42 +94,13 @@ public class Scenario1 {
     @When("User enters the initial text in the input field on the left")
     public void user_enters_the_initial_text_in_the_input_field_on_the_left() {
 
-        gTp.sourceTextArea.sendKeys("democratie");
+        gTp.sourceTextArea.sendKeys(initialText);
 
     }
     @Then("The initial text should match the translated text")
-    public void the_initial_text_should_match_the_translated_text() throws IOException, ParseException {
+    public void the_initial_text_should_match_the_translated_text() {
 
-        JSONParser jsonParser = new JSONParser();
-        FileReader readerDE = new FileReader("lang.json");
-      //  FileReader readerES = new FileReader("langES.json");
-
-        Object objDE = jsonParser.parse(readerDE);
-        //Object objES = jsonParser.parse(readerES);
-
-        JSONObject jsonObjectDE = (JSONObject) objDE;
-        //JSONObject jsonObjectES = (JSONObject) objES;
-
-        JSONArray jsonArrayDE = (JSONArray) jsonObjectDE.get("lang");
-        //JSONArray jsonArrayES = (JSONArray) jsonObjectES.get("langES");
-
-        Map<String,String> mapLangDE = new LinkedHashMap<>();
-        Map<String,String> mapLangES = new LinkedHashMap<>();
-
-        System.out.println(jsonArrayDE.size());
-        for (int i = 0; i < jsonArrayDE.size(); i++) {
-
-            JSONObject lanDE = (JSONObject) jsonArrayDE.get(i);
-
-            String sourceLang = (String) lanDE.get("SourceLanguage");
-            String initialText = (String) lanDE.get("InitialText");
-
-                mapLangDE.put(sourceLang,initialText);
-
-        }
-
-        System.out.println(mapLangDE);
-
+        Assertions.assertEquals(expectedResult,"verano");
 
     }
 }
