@@ -4,8 +4,8 @@ Feature:
 
   Background:
     Given User is on Google Translate website
-    When User select source language from the drop-down menu on the left as German
-    And Users select translation language from the drop-down menu on the right as Spanish
+    When User select source language from the drop-down menu on the left as "German"
+    And Users select translation language from the drop-down menu on the right as "Spanish"
     And User enters the initial text in the input field on the left
 
   @sc1

@@ -9,21 +9,21 @@ import org.openqa.selenium.support.PageFactory;
 public class GoogleTranslatePage {
 
     public GoogleTranslatePage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
     @FindBy(xpath = "(//button[@aria-label='More source languages'])[1]")
     public WebElement sourceLanguageButton;
 
-    @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae']//div[@data-language-code='de']//div[.='German'])[1]")
-    public WebElement sourceLangGermanOption;
+    // @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae']//div[@data-language-code='de']//div[.='German'])[1]")
+    // public WebElement sourceLangGermanOption;
 
     @FindBy(xpath = "(//button[@aria-label='More target languages'])[1]")
     public WebElement targetLanguagesButton;
 
-    @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae'])[2]//div[@data-language-code='es']//div[.='Spanish']")
-    public WebElement targetLangSpanishOption;
+    // @FindBy(xpath = "(//div[@class='dykxn MeCBDd j33Gae'])[2]//div[@data-language-code='es']//div[.='Spanish']")
+    //public WebElement targetLangSpanishOption;
 
     @FindBy(xpath = "(//button[@aria-label='Swap languages (Cmd+Shift+S)'])[1]")
     public WebElement swapLangButton;

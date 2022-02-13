@@ -10,6 +10,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 
 import java.io.FileNotFoundException;
@@ -53,8 +55,10 @@ public class Scenario1 {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
     }
-    @When("User select source language from the drop-down menu on the left as German")
-    public void user_select_source_language_from_the_drop_down_menu_on_the_left_as() {
+    @When("User select source language from the drop-down menu on the left as {string}")
+    public void user_select_source_language_from_the_drop_down_menu_on_the_left_as(String sourceLang) {
+
+        WebElement sLang = Driver.getDriver().findElement(By.xpath("(//div[@class='qSb8Pe']//div[contains(text(),'"+ sourceLang +"')])[1]"));
 
         BrowserUtility.waitForClickable(gTp.sourceLanguageButton,5);
 
@@ -75,20 +79,22 @@ public class Scenario1 {
 
         BrowserUtility.waitFor(1);
 
-        gTp.sourceLangGermanOption.click();
+        sLang.click();
 
 
     }
-    @When("Users select translation language from the drop-down menu on the right as Spanish")
-    public void users_select_translation_language_from_the_drop_down_menu_on_the_right_as() {
+    @When("Users select translation language from the drop-down menu on the right as {string}")
+    public void users_select_translation_language_from_the_drop_down_menu_on_the_right_as(String translationLanguage) {
 
-        BrowserUtility.waitForVisibility(gTp.targetLanguagesButton,5);
+        WebElement tLang = Driver.getDriver().findElement(By.xpath("(//div[@class='qSb8Pe']//div[contains(text(),'"+ translationLanguage +"')])[1]"));
+
+        BrowserUtility.waitForVisibility(tLang,5);
 
         gTp.targetLanguagesButton.click();
 
         BrowserUtility.waitFor(1);
 
-        gTp.targetLangSpanishOption.click();
+        tLang.click();
 
     }
     @When("User enters the initial text in the input field on the left")
