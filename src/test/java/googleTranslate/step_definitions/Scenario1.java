@@ -20,12 +20,24 @@ public class Scenario1 {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
-
     }
     @When("User select source language from the drop-down menu on the left as German")
     public void user_select_source_language_from_the_drop_down_menu_on_the_left_as() {
 
         BrowserUtility.waitForClickable(gTp.sourceLanguageButton,5);
+
+        /**
+         *  Could also be implemented as below during DataBaseTesting.
+         *  We can use a reusable WebElement locator such that it will select the Source Language as that option.
+         *
+            * Inside Feature File:
+                    *  When User select source language from the drop-down menu on the left as <langSource>
+            * Method inside Step-Definitions Package
+                    * @When ("User select source language from the drop-down menu on the left as {string}")
+                    * public void user_select_source_language_from_the_drop_down_menu_on_the_left_as(String sourceLang) {
+            * Re-Usable WebElement:
+                    * Driver.findElement(By.xpath("(//div[@class='qSb8Pe']//div[contains(text(),'"+ sourceLang +"')])[1]"))
+         */
 
         gTp.sourceLanguageButton.click();
 
