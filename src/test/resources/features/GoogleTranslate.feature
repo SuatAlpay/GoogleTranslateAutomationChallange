@@ -1,6 +1,6 @@
 @sc
 Feature:
-  Testing Google Translate website to compare results from selected source languages and translation languages
+  Testing Google Translate website functionalities to compare results from selected source languages and translation languages
 
 
   Background:
