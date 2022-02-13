@@ -39,10 +39,14 @@ public class Scenario2 {
     public void user_clicks_swap_languages_button() {
 
         gTp.swapLangButton.click();
+
     }
 
     @Then("Verify that the  translated text is {string}")
     public void verifyThatTheTranslatedTextIs(String text) {
+
+        BrowserUtility.waitFor(5);
+
         text= initialText;
 
         String actualResult = gTp.actualTextFromTranslationsAreaAfterSwap.getText();

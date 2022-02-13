@@ -25,6 +25,9 @@ public class GoogleTranslatePage {
     @FindBy(xpath = "//span//div/textarea[@aria-label='Source text']")
     public WebElement sourceTextArea;
 
+    @FindBy(xpath = "//button[@aria-label='Clear source text']")
+    public WebElement clearSourceTextButton;
+
     @FindBy(xpath = "//div[@class='A3dMNc']/span")
     public WebElement actualTextFromSourceArea;
 
@@ -33,7 +36,6 @@ public class GoogleTranslatePage {
 
     @FindBy(xpath = "//div[@class='J0lOec']//span[@jsname='W297wb']")
     public WebElement actualTextFromTranslationsAreaAfterSwap;
-
 
     @FindBy(xpath = "//a[@aria-label='Show the Input Tools menu']")
     public WebElement inputTools;

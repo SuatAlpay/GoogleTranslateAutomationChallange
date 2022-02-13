@@ -111,6 +111,8 @@ public class Scenario1 {
 
         gTp.sourceTextArea.sendKeys(text);
 
+        BrowserUtility.waitFor(5);
+
     }
     @Then("The initial text should be translated to the {string}")
     public void the_initial_text_should_match_the_translated_text(String result) {

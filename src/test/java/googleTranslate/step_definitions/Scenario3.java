@@ -3,6 +3,7 @@ package googleTranslate.step_definitions;
 import googleTranslate.pages.GoogleTranslatePage;
 import googleTranslate.utilities.BrowserUtility;
 import io.cucumber.java.en.*;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Keys;
 
 public class Scenario3 {
@@ -12,7 +13,9 @@ public class Scenario3 {
     @When("User clears the input field")
     public void user_clears_the_input_field() {
 
-        gTp.sourceTextArea.clear();
+        //gTp.sourceTextArea.clear();
+
+        gTp.clearSourceTextButton.click();
 
     }
     @When("User clicks select input tool button")
@@ -39,6 +42,9 @@ public class Scenario3 {
         gTp.capsButton.click();
         gTp.exclamationPoint.click();
         gTp.closeKeyboardButton.click();
+
+        Assertions.assertEquals("Hi!",gTp.actualTextFromSourceArea.getText());
+
     }
 
 }
