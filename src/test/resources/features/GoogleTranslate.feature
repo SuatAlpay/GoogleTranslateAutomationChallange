@@ -1,5 +1,5 @@
 Feature:
-  Testing Google Translate website to compare results
+  Testing Google Translate website to compare results from selected source languages and translation languages
 
 
   Background:
