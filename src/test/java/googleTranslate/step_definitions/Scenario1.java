@@ -119,7 +119,7 @@ public class Scenario1 {
 
         String actualResult = gTp.actualTextFromTranslationsArea.getText();
 
-        Assertions.assertEquals(expectedResult,actualResult);
+        Assertions.assertEquals(result,actualResult);
 
     }
 
