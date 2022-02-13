@@ -116,7 +116,10 @@ public class Scenario1 {
     public void the_initial_text_should_match_the_translated_text(String result) {
 
         result = expectedResult;
-        Assertions.assertEquals(expectedResult,"verano");
+
+        String actualResult = gTp.actualTextFromTranslationsArea.getText();
+
+        Assertions.assertEquals(expectedResult,actualResult);
 
     }
 
