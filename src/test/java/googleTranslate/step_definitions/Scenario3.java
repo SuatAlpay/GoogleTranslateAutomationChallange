@@ -31,7 +31,7 @@ public class Scenario3 {
         gTp.inputToolsEngKeyboard.click();
 
     }
-    @Then("User should enter Hi")
+    @Then("User should enter Hi! and verify the source text")
     public void user_should_enter() {
 
         BrowserUtility.waitForVisibility(gTp.capsButton,5);

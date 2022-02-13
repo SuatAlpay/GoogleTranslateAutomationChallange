@@ -1,3 +1,4 @@
+@sc
 Feature:
   Testing Google Translate website to compare results from selected source languages and translation languages
 
@@ -22,4 +23,4 @@ Feature:
     And User clears the input field
     And User clicks select input tool button
     And User selects screen keyboard
-    Then User should enter Hi
+    Then User should enter Hi! and verify the source text
