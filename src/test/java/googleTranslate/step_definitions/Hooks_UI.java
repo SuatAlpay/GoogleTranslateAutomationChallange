@@ -30,6 +30,6 @@ public class Hooks_UI {
         }
 
 
-        Driver.getDriver().close();
+        Driver.closeDriver();
     }
 }

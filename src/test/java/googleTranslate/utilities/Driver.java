@@ -16,7 +16,7 @@ public class Driver {
 
         if (driverPool.get()==null){
 
-            String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.getProperty("browser");
+            String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.read("browser");
 
             switch (browser){
 
@@ -38,7 +38,7 @@ public class Driver {
 
         if (driverPool.get()!=null){
             driverPool.get().quit();
-            driverPool.get().close();
+            driverPool.set(null);
         }
     }
 }

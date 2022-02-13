@@ -53,7 +53,7 @@ public class Scenario1 {
     @Given("User is on Google Translate website")
     public void user_is_on_google_translate_website() {
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        Driver.getDriver().get(ConfigurationReader.read("url"));
 
     }
     @When("User select source language from the drop-down menu on the left as {string}")
