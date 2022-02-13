@@ -88,7 +88,7 @@ public class Scenario1 {
 
         WebElement tLang = Driver.getDriver().findElement(By.xpath("(//div[@class='qSb8Pe']//div[contains(text(),'"+ translationLanguage +"')])[1]"));
 
-        BrowserUtility.waitForVisibility(tLang,5);
+        BrowserUtility.waitForClickable(gTp.targetLanguagesButton,5);
 
         gTp.targetLanguagesButton.click();
 
